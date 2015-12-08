@@ -1,0 +1,102 @@
+PUT sensors
+{
+   "mappings": {
+      "sensorsdevice": {
+         "_timestamp": {
+            "enabled": true,
+            "path": "time",
+            "ignore_missing": true,
+            "store": "yes"
+         },
+         "properties": {
+            "event_datetime": {
+               "type": "date"
+            },
+            "Accelerometer_x": {
+               "type": "double"
+            },
+            "Accelerometer_y": {
+               "type": "double"
+            },
+            "Accelerometer_z": {
+               "type": "double"
+            },
+            "Gravity_x": {
+               "type": "double"
+            },
+            "Gravity_y": {
+               "type": "double"
+            },
+            "Gravity_z": {
+               "type": "double"
+            },
+            "LinearAcceleration_x": {
+               "type": "double"
+            },
+            "LinearAcceleration_y": {
+               "type": "double"
+            },
+            "LinearAcceleration_z": {
+               "type": "double"
+            },
+            "Orientation_x": {
+               "type": "double"
+            },
+            "Orientation_y": {
+               "type": "double"
+            },
+            "Orientation_z": {
+               "type": "double"
+            },
+            "Light": {
+               "type": "double"
+            },
+            "Magnetic_x": {
+               "type": "double"
+            },
+            "Magnetic_y": {
+               "type": "double"
+            },
+            "Magnetic_z": {
+               "type": "double"
+            },
+            "Pressure": {
+               "type": "double"
+            },
+            "RotationVector_x": {
+               "type": "double"
+            },
+            "RotationVector_y": {
+               "type": "double"
+            },
+            "RotationVector_z": {
+               "type": "double"
+            },
+            "Location": {
+               "type": "geo_point"
+            },
+            "Country": {
+               "type": "string"
+            },
+            "PostalCode": {
+               "type": "string"
+            },
+            "City": {
+               "type": "string"
+            },
+            "AddressLine": {
+               "type": "string"
+            }
+         }
+      }
+   }
+}
+
+
+GET sensors
+
+DELETE sensors
+
+GET .kibana
+
+DELETE .kibana

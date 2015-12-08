@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#FFFFFF"-->
+<!--LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:drawableRight="@drawable/icon"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:orientation="vertical"
+    android:background="#FFFFFF"-->
+
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/imageView_ATTENTION"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="74dp"
+        android:layout_height="47dp"
+        android:src="@drawable/location"
+        android:layout_x="0dp"
+        android:layout_y="40dp"/>
+    <TextView
+        android:id="@+id/fieldLongitude"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:text="Longitude: disabled"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="80dp"
+        android:layout_y="0dp"/>
+
+    <TextView
+        android:id="@+id/fieldLatitude"
+        android:layout_width="305dp"
+        android:layout_height="wrap_content"
+        android:text="Latitude: disabled"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="80dp"
+        android:layout_y="20dp"/>
+    <TextView
+        android:id="@+id/fieldAddressLine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="AdressLine: disabled"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="80dp"
+        android:layout_y="40dp"/>
+    <TextView
+        android:id="@+id/fieldPostalCode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="PostalCode: disabled"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="80dp"
+        android:layout_y="60dp"/>
+    <TextView
+        android:id="@+id/fieldCity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="City: disabled"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="80dp"
+        android:layout_y="80dp"/>
+    <TextView
+        android:id="@+id/fieldCountry"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Country: disabled"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="80dp"
+        android:layout_y="100dp"/>
+    <TextView
+        android:id="@+id/Accelerometer"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Accelerometer:         ,                 ,"
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="120dp"/>
+    <TextView
+		android:id="@+id/text_accelerometer_x"
+		android:layout_width="70dp"
+		android:layout_height="wrap_content"
+		android:text="Value X"
+        android:textSize="12sp"
+        android:textColor="#00F"
+        android:background="#dedbdb"
+        android:layout_x="85dp"
+        android:layout_y="120dp"/>
+    <TextView
+        android:id="@+id/text_accelerometer_y"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Value Y"
+        android:textSize="12sp"
+        android:textColor="#00F"
+        android:background="#dedbdb"
+        android:layout_x="160dp"
+        android:layout_y="120dp"/>
+    <TextView
+        android:id="@+id/text_accelerometer_z"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Value Z"
+        android:textSize="12sp"
+        android:textColor="#00F"
+        android:background="#dedbdb"
+        android:layout_x="240dp"
+        android:layout_y="120dp"/>
+    <TextView
+        android:id="@+id/LAcceleration"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="LinearAcceleration:                 ,                  , "
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="140dp"/>
+	<TextView
+		android:id="@+id/text_linear_acceleration_x"
+		android:layout_width="70dp"
+		android:layout_height="wrap_content"
+		android:text="Value X"
+        android:textSize="12sp"
+        android:textColor="#2E8B57"
+        android:layout_gravity="bottom"
+        android:background="#dedbdb"
+        android:layout_x="105dp"
+        android:layout_y="140dp"/>
+    <TextView
+        android:id="@+id/text_linear_acceleration_y"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Value Y"
+        android:textSize="12sp"
+        android:textColor="#2E8B57"
+        android:layout_gravity="bottom"
+        android:background="#dedbdb"
+        android:layout_x="170dp"
+        android:layout_y="140dp"/>
+    <TextView
+        android:id="@+id/text_linear_acceleration_z"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Z"
+        android:textSize="12sp"
+        android:textColor="#2E8B57"
+        android:layout_gravity="bottom"
+        android:background="#dedbdb"
+        android:layout_x="240dp"
+        android:layout_y="140dp"/>
+    <TextView
+        android:id="@+id/Gravity"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Gravity:              ,                       ,           "
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="160dp"/>
+    <TextView
+		android:id="@+id/text_gravity_x"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Value X"
+        android:textSize="12sp"
+        android:textColor="#800080"
+        android:background="#dedbdb"
+        android:layout_x="40dp"
+        android:layout_y="160dp"/>
+    <TextView
+        android:id="@+id/text_gravity_y"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Y"
+        android:textSize="12sp"
+        android:textColor="#800080"
+        android:background="#dedbdb"
+        android:layout_x="120dp"
+        android:layout_y="160dp"/>
+    <TextView
+        android:id="@+id/text_gravity_z"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Z"
+        android:textSize="12sp"
+        android:textColor="#800080"
+        android:background="#dedbdb"
+        android:layout_x="200dp"
+        android:layout_y="160dp"/>
+    <TextView
+        android:id="@+id/light"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:text="Light:"
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="180dp"/>
+    <TextView
+		android:id="@+id/text_light"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Light: disabled"
+        android:textSize="12sp"
+        android:textColor="#404040"
+        android:background="#dedbdb"
+        android:layout_x="60dp"
+        android:layout_y="180dp"/>
+    <TextView
+        android:id="@+id/Orientation"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Orientation:                   ,                     ,  "
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="200dp"/>
+    <TextView
+		android:id="@+id/text_orientation_x"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Value X"
+        android:textSize="12sp"
+        android:textColor="#FF8C00"
+        android:background="#dedbdb"
+        android:layout_x="70dp"
+        android:layout_y="200dp"/>
+    <TextView
+        android:id="@+id/text_orientation_y"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Y"
+        android:textSize="12sp"
+        android:textColor="#FF8C00"
+        android:background="#dedbdb"
+        android:layout_x="140dp"
+        android:layout_y="200dp"/>
+    <TextView
+        android:id="@+id/text_orientation_z"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Z"
+        android:textSize="12sp"
+        android:textColor="#FF8C00"
+        android:background="#dedbdb"
+        android:layout_x="220dp"
+        android:layout_y="200dp"/>
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:text="Temperature:"
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="220dp"/>
+    <TextView
+		android:id="@+id/text_temperature"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Temperature: disabled"
+        android:textSize="12sp"
+        android:textColor="#FFFF00"
+        android:background="#dedbdb"
+        android:layout_x="75dp"
+        android:layout_y="220dp"/>
+    <TextView
+        android:id="@+id/text_magnetic"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Magnetic:              ,                     ,    "
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="240dp"/>
+    <TextView
+		android:id="@+id/text_magnetic_field_x"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Value X"
+        android:textSize="12sp"
+        android:textColor="#FF0000"
+        android:background="#dedbdb"
+        android:layout_x="60dp"
+        android:layout_y="240dp"/>
+    <TextView
+        android:id="@+id/text_magnetic_field_y"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Y"
+        android:textSize="12sp"
+        android:textColor="#FF0000"
+        android:background="#dedbdb"
+        android:layout_x="120dp"
+        android:layout_y="240dp"/>
+    <TextView
+        android:id="@+id/text_magnetic_field_z"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Z"
+        android:textSize="12sp"
+        android:textColor="#FF0000"
+        android:background="#dedbdb"
+        android:layout_x="180dp"
+        android:layout_y="240dp"/>
+    <TextView
+        android:id="@+id/text_Pressure"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:text="Pressure:"
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="260dp"/>
+	<TextView
+		android:id="@+id/text_pressure"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Pressure: disabled"
+        android:textSize="12sp"
+        android:textColor="#8B0000"
+        android:background="#dedbdb"
+        android:layout_x="50dp"
+        android:layout_y="260dp"/>
+    <TextView
+        android:id="@+id/text_RotationVector"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Rotation Vector:             ,                     ,          "
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:background="#dedbdb"
+        android:layout_x="0dp"
+        android:layout_y="280dp"/>
+    <TextView
+		android:id="@+id/text_rotation_vector_x"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Value X"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="90dp"
+        android:layout_y="280dp"/>
+    <TextView
+        android:id="@+id/text_rotation_vector_y"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Y"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="180dp"
+        android:layout_y="280dp"/>
+    <TextView
+        android:id="@+id/text_rotation_vector_z"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Value Z"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:background="#dedbdb"
+        android:layout_x="260dp"
+        android:layout_y="280dp"/>
+    <TextView
+        android:id="@+id/text_RestURL"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="URL"
+        android:textSize="12sp"
+        android:textColor="#000" android:textStyle="bold"
+        android:layout_x="20dp"
+        android:layout_y="330dp"/>
+    <EditText
+        android:id="@+id/edit_text_RestURL"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_x="50dp"
+        android:layout_y="320dp"/>
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_x="60dp"
+        android:layout_y="370dp"
+        android:text="Start"/>
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_x="200dp"
+        android:layout_y="370dp"
+        android:text="Stop"/>
+    <TextView
+        android:id="@+id/text_content"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#000"
+        android:layout_x="50dp"
+        android:layout_y="415dp"/>
+
+    <ImageView android:layout_height="50dp"
+        android:layout_width="50dp" android:id="@+id/droidImageView"
+        android:layout_x="150dp"
+        android:layout_y="450dp"
+        android:src="@drawable/icon"></ImageView>
+
+</AbsoluteLayout>
+<!--/LinearLayout-->
