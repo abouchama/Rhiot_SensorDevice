@@ -21,7 +21,10 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
@@ -63,8 +66,8 @@ public class SensorDeviceActivity extends Activity {
     private TextView mTextViewCity;
     private TextView mTextViewPostalCode;
     private TextView mTextViewAddressLine;
-    private TextView mTextViewContent;
-    private EditText RestURL;
+    private TextView mTextViewResult;
+    private EditText edit_text_RestURL;
     private Button myStartButton;
     private Button myStopButton;
 
@@ -107,7 +110,7 @@ public class SensorDeviceActivity extends Activity {
 		mTextViewRotationVector_x = (TextView) findViewById(R.id.text_rotation_vector_x);
         mTextViewRotationVector_y = (TextView) findViewById(R.id.text_rotation_vector_y);
         mTextViewRotationVector_z = (TextView) findViewById(R.id.text_rotation_vector_z);
-        mTextViewContent = (TextView) findViewById(R.id.text_content);
+        mTextViewResult = (TextView) findViewById(R.id.text_result);
         mTextViewLatitude = (TextView)findViewById(R.id.fieldLatitude);
         mTextViewLongitude = (TextView)findViewById(R.id.fieldLongitude);
         mTextViewCountry = (TextView)findViewById(R.id.fieldCountry);
@@ -115,7 +118,7 @@ public class SensorDeviceActivity extends Activity {
         mTextViewPostalCode = (TextView)findViewById(R.id.fieldPostalCode);
         mTextViewAddressLine = (TextView)findViewById(R.id.fieldAddressLine);
 
-        RestURL = (EditText) findViewById(R.id.edit_text_RestURL);
+        edit_text_RestURL = (EditText) findViewById(R.id.edit_text_RestURL);
         myStartButton = (Button) findViewById(R.id.button_start);
         myStopButton = (Button) findViewById(R.id.button_stop);
 
@@ -131,24 +134,10 @@ public class SensorDeviceActivity extends Activity {
                 @Override
                 public boolean onTouch(View v, MotionEvent event) {
                     myStopButton.setVisibility(View.VISIBLE);
-                    //new HttpAsyncTask().execute("http://192.168.1.48:9080/CreateOrder/");
-                    //myStartButton.setPressed(true);
-                    //initiate the button
                     myStartButton.performClick();
-                    //myStartButton.setLongClickable(true);
                     myStartButton.setPressed(true);
                     myStartButton.invalidate();
-
-                    //new HttpAsyncTask().execute("http://192.168.1.48:9080/CreateOrder/");
-                    // delay completion till animation completes
                     myStartButton.post(runnableCode);
-                    /*myStartButton.postDelayed( new Runnable() {  //delay button
-                        public void run() {
-                            myStartButton.setPressed(false);
-                            myStartButton.invalidate();
-                            //any other associated action
-                        }
-                    }, 1000);  // .8secs delay time*/
                     return true;
                 }
             });
@@ -168,7 +157,11 @@ public class SensorDeviceActivity extends Activity {
     private Runnable runnableCode = new Runnable() {
         @Override
         public void run() {
-            new HttpAsyncTask().execute("http://192.168.1.48:9080/CreateOrder/");
+            //new HttpAsyncTask().execute(edit_text_RestURL.getText().toString());
+            String URL = edit_text_RestURL.getText().toString();
+            //String URL = "http://192.168.1.50:9080/Sensors/";
+            //new HttpAsyncTask().execute("http://192.168.1.50:9080/Sensors/");
+            new HttpAsyncTask().execute(URL);
             myStartButton.postDelayed(runnableCode,1000);
         }
     };
@@ -184,6 +177,7 @@ public class SensorDeviceActivity extends Activity {
         protected void onPostExecute(String result) {
             //Toast.makeText(getBaseContext(), "Sending Sensors Data!", Toast.LENGTH_LONG).show();
             myStartButton.setEnabled(true);
+            mTextViewResult.setText(""+ result);
         }
     }
 
@@ -254,11 +248,10 @@ public class SensorDeviceActivity extends Activity {
             // 9. receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
 
-
             // 10. convert inputstream to string
             if(inputStream != null)
-                //result = convertInputStreamToString(inputStream);
-                //else
+                result = convertInputStreamToString(inputStream);
+                else
                 result = "Did not work!";
 
         } catch (Exception e) {
@@ -267,6 +260,18 @@ public class SensorDeviceActivity extends Activity {
 
         // 11. return result
         return result;
+    }
+
+    private static String convertInputStreamToString(InputStream inputStream) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        String line = "";
+        String result = "";
+        while((line = bufferedReader.readLine()) != null)
+            result += line;
+
+        inputStream.close();
+        return result;
+
     }
 
 	private void initListeners() {
