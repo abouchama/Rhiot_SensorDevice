@@ -16,7 +16,7 @@
 
   <camelContext id="Rhiot_Flow" trace="true" useMDCLogging="false" xmlns="http://camel.apache.org/schema/blueprint">
     <route id="Rhiot_route">
-        <from uri="jetty:http://0.0.0.0:9080/CreateOrder/?enableJmx=true"/>
+        <from uri="jetty:http://0.0.0.0:9080/Sensors/?enableJmx=true"/>
 		<convertBodyTo type="java.lang.String"/>
 		<inOnly uri="elasticsearch://elasticsearch?ip=localhost&amp;port=9300&amp;operation=INDEX&amp;indexName=sensors&amp;indexType=sensorsdevice"/>
 		<transform>
